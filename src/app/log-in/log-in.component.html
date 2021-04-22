@@ -1,19 +1,19 @@
 <h3>Log in</h3>
 
 <div>
-  <label for="name">
+  <label for="username">
     Username
   </label>
-  <input id="name" type="text" [(ngModel)]="username" >
+  <input id="username" type="text" [(ngModel)]="login" >
 </div>
 
 <div>
-  <label for="address">
+  <label for="password">
     Password
   </label>
-  <input id="address" type="text" [(ngModel)]="password">
+  <input id="password" type="password" [(ngModel)]="password">
 </div>
 
-<button class="button" type="submit">Login</button>
+<button class="button" type="submit" (click)="loginFunc()">Login</button>
 <p>Don't have any account? <a [routerLink]="['/register']">Click here</a></p>
 <!--</form>-->

@@ -4,6 +4,8 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RatingModule} from 'ng-starrating';
 import {HttpClientModule} from '@angular/common/http';
+import {MoviesRepositoryService} from './movie-list/movies-repository.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
@@ -18,6 +20,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import {FilterPipe} from './movie-list/pipes';
 import {FilterMoviesService} from './movie-list/filter-movies-service';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -35,6 +38,7 @@ import { RegisterComponent } from './register/register.component';
     FilterPipe,
     MovieListComponent,
     RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ import { RegisterComponent } from './register/register.component';
       {path: 'genre/:genreId', component: GenreComponent},
       {path: 'login', component: LogInComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'profile', component: ProfileComponent}
       // {path: 'shipping', component: ShippingComponent},
     ]),
     FormsModule,
@@ -55,6 +60,7 @@ import { RegisterComponent } from './register/register.component';
   providers: [
     HttpClientModule,
     FilterMoviesService,
+    MoviesRepositoryService,
   ],
   exports: [
     MovieLikeComponent

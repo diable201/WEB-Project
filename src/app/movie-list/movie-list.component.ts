@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {movies} from '../movies';
-import {Movie} from './models/movie.model';
-import {Genre} from './models/genre.model';
-import { MoviesRepositoryService } from './movies-repository.service';
 import { Location } from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';

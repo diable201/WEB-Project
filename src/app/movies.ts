@@ -11,6 +11,11 @@ export interface Movie {
   like: number;
 }
 
+export interface User {
+  id: number;
+  isActive: boolean;
+}
+
 export const movies = [
   {
     id: 1,

@@ -8,9 +8,24 @@
   overflow: hidden;
 }
 
-img{
+img {
   width: 100%;
 }
+
+.movie-cover img {
+  width: 15vw;
+}
+
+
+/*.main-area {*/
+/*  padding-top: 64px;*/
+/*  padding-right: 40px;*/
+/*  padding-left: 40px;*/
+/*  height: auto;*/
+/*  width: auto;*/
+/*  text-align: left;*/
+/*}*/
+
 
 /*:after{*/
 /*   content: '';*/

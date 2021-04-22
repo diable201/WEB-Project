@@ -4,8 +4,6 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RatingModule} from 'ng-starrating';
 import {HttpClientModule} from '@angular/common/http';
-import {MoviesRepositoryService} from './movie-list/movies-repository.service';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
@@ -57,7 +55,6 @@ import { RegisterComponent } from './register/register.component';
   providers: [
     HttpClientModule,
     FilterMoviesService,
-    MoviesRepositoryService,
   ],
   exports: [
     MovieLikeComponent

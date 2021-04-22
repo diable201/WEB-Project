@@ -1,39 +1,59 @@
 <!--<h2>Movie Details</h2>-->
 <div *ngIf="movie">
-    <div class="movie-banner-cover">
-      <img src="assets/movies/{{movie.cover}}" alt="movie cover">
+  <div class="movie-banner-cover">
+    <img src="assets/movies/{{movie.cover}}" alt="movie cover">
+  </div>
+  <div class="movie-detail-container">
+    <div class="movie-cover">
+      <img src="assets/movies/{{movie.img}}" alt="movie poster">
     </div>
-    <div class="movie-detail-container">
-      <div class="movie-cover">
-        <img src="assets/movies/{{movie.img}}" alt="movie poster">
+    <div class="movie-detail">
+      <h2>{{movie.name}}</h2>
+      <div class="short-info">
+        <div class="rate"><span>Rate: <strong>{{movie.rate}}</strong></span></div>
+        <div class="duration"><span>Length: <strong>{{movie.length}}</strong></span></div>
       </div>
-      <div class="movie-detail">
-        <h2>{{movie.name}}</h2>
-        <div class="short-info">
-          <div class="rate"><span>rate: <strong>{{movie.rate}}</strong></span></div>
-          <div class="duration"><span>length: <strong>{{movie.length}}</strong></span></div>
+      <div class="like"><span>Likes: <strong>{{movie.like}}</strong></span></div>
+      <p class="desc">
+        {{movie.description}}
+      </p>
+      <button (click)="goBack()" class="backButton">Go Back</button>
+      <p *ngIf="isLiked === false">
+        <button (click)="onClick()" class="likeButton">Like</button>
+      </p>
+      <p *ngIf="isLiked === true">
+        <button (click)="onClick()" class="likeButton">Unlike</button>
+      </p>
+      <p>
+        <button (click)="share(movie)">Share</button>
+      </p>
+      <body>
+      <div class="main-area">
+        <h1>Reviews</h1>
+        <div>
+          <label>Username</label>
+          <input type="username" class="form-control" placeholder="Username"
+                 #commUsername>
+          <label>Leave a review</label>
+          <textarea rows="5" #commBody></textarea>
         </div>
-        <div class="like"><span>Likes: <strong>{{movie.like}}</strong></span></div>
-        <p class="desc">
-          {{movie.description}}
-        </p>
-        <button (click)="goBack()" class="backButton">Go Back</button>
-        <p *ngIf= "isLiked === false">
-          <button (click)="Onclick(movie)" class="likeButton">Like</button>
-        </p>
-        <p *ngIf= "isLiked === true">
-          <button (click)="Onclick(movie)" class="likeButton" >Unlike</button>
-        </p>
-        <p>
-          <button (click)="share(movie)">Share</button>
-        </p>
+        <button type="button" (click)="addComment(commUsername.value, commBody.value);
+          commUsername.value=''; commBody.value=''">Post
+        </button>
+        <br>
+        <div class="card" *ngFor="let comment of comments">
+          <div class="card-header">
+            Reviews
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>{{comment.body}}</p>
+              <footer class="blockquote-footer"> Username  {{comment.username}} </footer>
+            </blockquote>
+          </div>
+        </div>
       </div>
+      </body>
+    </div>
   </div>
 </div>
-<!--  <h4>{{ product.price | currency }}</h4>-->
-<!--  <button (click)="addToCart(product)">Buy</button>-->
-<!--  <app-movie-item [movie]="movie">-->
-
-<!--  </app-movie-item>-->
-
-

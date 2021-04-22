@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WEB-Project": {
+    "projectFinal": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/WEB-Project",
+            "outputPath": "dist/projectFinal",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,13 +46,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -65,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WEB-Project:build"
+            "browserTarget": "projectFinal:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "WEB-Project:build:production"
+              "browserTarget": "projectFinal:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WEB-Project:build"
+            "browserTarget": "projectFinal:build"
           }
         },
         "test": {
@@ -113,16 +109,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "WEB-Project:serve"
+            "devServerTarget": "projectFinal:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "WEB-Project:serve:production"
+              "devServerTarget": "projectFinal:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "WEB-Project"
+  "defaultProject": "projectFinal"
 }

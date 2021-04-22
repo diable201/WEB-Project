@@ -1,0 +1,27 @@
+.movies-list{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+.fa-share-alt {
+  padding: 3px;
+  color: #fff;
+}
+
+.fa-trash {
+  color: white;
+  padding: 3px;
+}
+
+#outer {
+  width: 100%;
+  text-align: center;
+}
+
+.inner {
+  margin: 5px;
+  display: inline-block;
+}

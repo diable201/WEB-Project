@@ -8,6 +8,7 @@ export interface Movie {
   length: string;
   img: string;
   cover: string;
+  like: number;
 }
 
 export const movies = [
@@ -20,7 +21,8 @@ export const movies = [
     rate: '8.6',
     length: '1hr 48mins',
     img: 'deadpool.jpg',
-    cover: 'deadpool-cover.jpg'
+    cover: 'deadpool-cover.jpg',
+    like: 5123
   },
   {
     id: 2,
@@ -37,7 +39,8 @@ export const movies = [
     rate: '7.0',
     length: '1hr 50mins',
     img: 'we-are-the-millers.jpg',
-    cover: 'we-are-the-millers-cover.jpg'
+    cover: 'we-are-the-millers-cover.jpg',
+    like: 6524
   },
   {
     id: 3,
@@ -53,7 +56,8 @@ export const movies = [
     rate: '8.0',
     length: '2hr 27mins',
     img: 'straight-outta-compton.jpg',
-    cover: 'straight-outta-compton-cover.jpg'
+    cover: 'straight-outta-compton-cover.jpg',
+    like: 5651
   },
   {
     id: 4,
@@ -69,7 +73,8 @@ export const movies = [
     rate: '6.9',
     length: '2hr 5mins',
     img: 'gridiron-gang.jpg',
-    cover: 'gridiron-gang-cover.jpg'
+    cover: 'gridiron-gang-cover.jpg',
+    like: 6413
   },
   {
     id: 5,
@@ -85,7 +90,8 @@ export const movies = [
     rate: '7.8',
     length: '2hr 37mins',
     img: 'american-gangster.jpg',
-    cover: 'american-gangster-cover.jpg'
+    cover: 'american-gangster-cover.jpg',
+    like: 7894
   },
   {
     id: 6,
@@ -101,7 +107,8 @@ export const movies = [
     rate: '6.8',
     length: '1hr 53mins',
     img: 'gangster-squad.jpg',
-    cover: 'gangster-squad-cover.jpg'
+    cover: 'gangster-squad-cover.jpg',
+    like: 4651
   },
   {
     id: 7,
@@ -117,7 +124,8 @@ export const movies = [
     rate: '7.3',
     length: '1hr 55mins',
     img: 'now-you-see-me.jpg',
-    cover: 'now-you-see-me-cover.jpg'
+    cover: 'now-you-see-me-cover.jpg',
+    like: 3143
   },
   {
     id: 8,
@@ -133,7 +141,8 @@ export const movies = [
     rate: '7.1',
     length: '2hr 4mins',
     img: 'jurassic-world.jpg',
-    cover: 'jurassic-world-cover.jpg'
+    cover: 'jurassic-world-cover.jpg',
+    like: 8795
   },
   {
     id: 9,
@@ -149,7 +158,8 @@ export const movies = [
     rate: '7.5',
     length: '2hr 11mins',
     img: 'mission-impossible-rogue-nation.jpg',
-    cover: 'mission-impossible-rogue-nation-cover.jpg'
+    cover: 'mission-impossible-rogue-nation-cover.jpg',
+    like: 6744
   },
   {
     id: 10,
@@ -165,7 +175,8 @@ export const movies = [
     rate: '7.3',
     length: '1hr 56mins',
     img: 'the-man-from-uncle.jpg',
-    cover: 'the-man-from-uncle-cover.jpg'
+    cover: 'the-man-from-uncle-cover.jpg',
+    like: 7894
   },
   {
     id: 11,
@@ -181,7 +192,8 @@ export const movies = [
     rate: '7.0',
     length: '2hr 28mins',
     img: 'legend.jpg',
-    cover: 'legend-cover.jpg'
+    cover: 'legend-cover.jpg',
+    like: 7784
   },
   {
     id: 12,
@@ -197,7 +209,8 @@ export const movies = [
     rate: '7.5',
     length: '2hr 4mins',
     img: 'southpaw.jpg',
-    cover: 'southpaw-cover.jpg'
+    cover: 'southpaw-cover.jpg',
+    like: 4651
   },
   {
     id: 13,
@@ -213,7 +226,8 @@ export const movies = [
     rate: '7.7',
     length: '2hr 22mins',
     img: 'bridge-of-spies.jpg',
-    cover: 'bridge-of-spies-cover.jpg'
+    cover: 'bridge-of-spies-cover.jpg',
+    like: 8942
   },
   {
     id: 14,
@@ -229,7 +243,8 @@ export const movies = [
     rate: '7.4',
     length: '1hr 57mins',
     img: 'ant-man.jpg',
-    cover: 'ant-man-cover.jpg'
+    cover: 'ant-man-cover.jpg',
+    like: 6461
   },
   {
     id: 15,
@@ -245,7 +260,8 @@ export const movies = [
     rate: '7.3',
     length: '2hr 17mins',
     img: 'fast-and-furious-7.jpg',
-    cover: 'fast-and-furious-7-cover.jpg'
+    cover: 'fast-and-furious-7-cover.jpg',
+    like: 1423
   },
   {
     id: 16,
@@ -261,7 +277,8 @@ export const movies = [
     rate: '5.6',
     length: '1hr 34mins',
     img: 'tracers.jpg',
-    cover: 'tracers-cover.jpg'
+    cover: 'tracers-cover.jpg',
+    like: 4467
   },
   {
     id: 17,
@@ -277,7 +294,8 @@ export const movies = [
     rate: '7.4',
     length: '2hr 2mins',
     img: 'running-scared.jpg',
-    cover: 'the-hangover-cover.jpg'
+    cover: 'the-hangover-cover.jpg',
+    like: 6841
   },
   {
     id: 18,
@@ -291,7 +309,8 @@ export const movies = [
     rate: '7.8',
     length: '1hr 40mins',
     img: 'the-hangover.jpg',
-    cover: 'the-hangover-cover.jpg'
+    cover: 'the-hangover-cover.jpg',
+    like: 9984
   },
   {
     id: 19,
@@ -306,7 +325,8 @@ export const movies = [
     rate: '6.7',
     length: '1hr 28mins',
     img: 'project-x.jpg',
-    cover: 'project-x-cover.jpg'
+    cover: 'project-x-cover.jpg',
+    like: 7894
   },
   {
     id: 20,
@@ -322,7 +342,8 @@ export const movies = [
     rate: '9.0',
     length: '2hr 32mins',
     img: 'the-dark-knight.jpg',
-    cover: 'the-dark-knight-cover.jpg'
+    cover: 'the-dark-knight-cover.jpg',
+    like: 5822
   },
   {
     id: 21,
@@ -337,7 +358,8 @@ export const movies = [
     rate: '6.1',
     length: '1hr 35mins',
     img: 'the-tournament.jpg',
-    cover: 'the-hangover-cover.jpg'
+    cover: 'the-hangover-cover.jpg',
+    like: 7894
   },
   {
     id: 22,
@@ -352,7 +374,8 @@ export const movies = [
     rate: '8.7',
     length: '2hr 16mins',
     img: 'the-matrix.jpg',
-    cover: 'the-matrix-cover.jpg'
+    cover: 'the-matrix-cover.jpg',
+    like: 9941
   },
   {
     id: 23,
@@ -368,7 +391,8 @@ export const movies = [
     rate: '6.8',
     length: '1hr 59mins',
     img: 'bad-boys.jpg',
-    cover: 'bad-boys-cover.jpg'
+    cover: 'bad-boys-cover.jpg',
+    like: 9942
   },
   {
     id: 24,
@@ -384,7 +408,8 @@ export const movies = [
     rate: '6.9',
     length: '2hr 28mins',
     img: 'spectre.jpg',
-    cover: 'spectre-cover.jpg'
+    cover: 'spectre-cover.jpg',
+    like: 2364
   },
 ];
 

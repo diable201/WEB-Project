@@ -13,8 +13,19 @@
           <div class="rate"><span>rate: <strong>{{movie.rate}}</strong></span></div>
           <div class="duration"><span>length: <strong>{{movie.length}}</strong></span></div>
         </div>
+        <div class="like"><span>Likes: <strong>{{movie.like}}</strong></span></div>
         <p class="desc">
           {{movie.description}}
+        </p>
+        <button (click)="goBack()" class="backButton">Go Back</button>
+        <p *ngIf= "isLiked === false">
+          <button (click)="Onclick(movie)" class="likeButton">like</button>
+        </p>
+        <p *ngIf= "isLiked === true">
+          <button (click)="Onclick(movie)" class="likeButton" >Unlike</button>
+        </p>
+        <p>
+          <button (click)="share(movie)">Share</button>
         </p>
       </div>
   </div>

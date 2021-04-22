@@ -16,5 +16,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  registerFunc(): void{
+    window.alert(`Registration is not available now. Please try again later`);
+  }
 }

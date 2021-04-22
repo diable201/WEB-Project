@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Movie} from './movie-list/models/movie.model';
+import {Movie} from './movies';
 import {HttpClient} from '@angular/common/http';
 import {movies} from './movies';
 
@@ -14,16 +14,11 @@ export class MovieService {
   // getMovies(): Observable<any> {
   //   return this.client.get<any>(`${this.BASE_URL}/`);
   // }
-
-  getMovie(id: number): Observable<any> {
-    return of(movies.find(movie => movie.id === id));
-  }
-
-  getMovies(): Observable<any> {
+  getMovies(): Observable<Movie[]> {
     return of(movies);
   }
 
-  getMoviesByGenreId(id: number): Observable<any> {
+  getMoviesByGenreId(id: number): Observable<Movie[]> {
     return of(movies.filter(movie => movie.genreId === id));
   }
 }

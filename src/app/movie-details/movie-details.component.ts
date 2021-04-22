@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {MovieService} from '../movie.service';
 import {movies} from '../movies';
 // import {CartService} from '../cart.service';
 @Component({
@@ -17,17 +18,21 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private moviesService: MovieService,
     // private cartService: CartService
   ) {
   }
 
   ngOnInit(): void {
-    // First get the product id from the current route.
+    this.getMovie();
+  }
+
+  getMovie(): void {
     const routeParams = this.route.snapshot.paramMap;
     const movieIdFromRoute = Number(routeParams.get('id'));
-
     // Find the product that correspond with the id provided in route.
     this.movie = movies.find(movie => movie.id === movieIdFromRoute);
   }
+
 
 }

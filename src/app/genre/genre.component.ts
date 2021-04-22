@@ -15,8 +15,8 @@ export class GenreComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private productService: MovieService,
-    private categoryService: GenreService
+    private moviesService: MovieService,
+    private genresService: GenreService
   ) {
     this.router.events.subscribe((value => {
       this.getMovies();
@@ -30,12 +30,12 @@ export class GenreComponent implements OnInit {
 
   getMovies(): void {
     const id: number = +this.route.snapshot.paramMap.get('genreId');
-    this.productService.getMoviesByGenreId(id).subscribe(movies => this.movies = movies);
+    this.moviesService.getMoviesByGenreId(id).subscribe(movies => this.movies = movies);
   }
 
   getGenre(): void {
     const id = +this.route.snapshot.paramMap.get('genreId');
-    this.categoryService.getGenre(id).subscribe(genre => this.genre = genre);
+    this.genresService.getGenre(id).subscribe(genre => this.genre = genre);
   }
 
   share(movie): void {

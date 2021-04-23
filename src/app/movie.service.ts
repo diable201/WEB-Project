@@ -10,10 +10,6 @@ import {movies} from './movies';
 export class MovieService {
   constructor(private client: HttpClient) {
   }
-  //
-  // getMovies(): Observable<any> {
-  //   return this.client.get<any>(`${this.BASE_URL}/`);
-  // }
   getMovies(): Observable<Movie[]> {
     return of(movies);
   }

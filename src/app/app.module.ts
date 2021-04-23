@@ -8,15 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { MovieLikeComponent } from './movie-like/movie-like.component';
 import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MovieAlertsComponent } from './movie-alerts/movie-alerts.component';
 import { GenreComponent } from './genre/genre.component';
 import { LogInComponent } from './log-in/log-in.component';
 
 import {FilterPipe} from './movie-list/pipes';
-import {FilterMoviesService} from './movie-list/filter-movies-service';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -25,14 +22,10 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     TopBarComponent,
-    // MovieListComponent,
-    MovieAlertsComponent,
     MovieDetailsComponent,
     LogInComponent,
-    // ShippingComponent,
     MovieFilterComponent,
     GenreComponent,
-    MovieLikeComponent,
     FilterPipe,
     MovieListComponent,
     RegisterComponent,
@@ -57,10 +50,8 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   providers: [
     HttpClientModule,
-    FilterMoviesService,
   ],
   exports: [
-    MovieLikeComponent
   ],
   bootstrap: [AppComponent]
 })

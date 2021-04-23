@@ -5,7 +5,6 @@ import {movies} from '../movies';
 import {Location} from '@angular/common';
 import {Commentary} from '../commentary';
 
-// import {CartService} from '../cart.service';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -16,16 +15,13 @@ export class MovieDetailsComponent implements OnInit {
   comments: Commentary[] = [];
   @Input() isLiked = false;
   review = false;
-  // addToCart(product): void {
-  //   this.cartService.addToCart(product);
-  //   window.alert('Your product has been added to the cart!');
-  // }
+  
 
   constructor(
     private route: ActivatedRoute,
     private moviesService: MovieService,
     private location: Location,
-    // private cartService: CartService
+    
   ) {
   }
 
@@ -36,7 +32,6 @@ export class MovieDetailsComponent implements OnInit {
   getMovie(): void {
     const routeParams = this.route.snapshot.paramMap;
     const movieIdFromRoute = Number(routeParams.get('id'));
-    // Find the product that correspond with the id provided in route.
     this.movie = movies.find(movie => movie.id === movieIdFromRoute);
   }
   goBack(): void {
@@ -61,11 +56,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   deleteComment(comment): void {
-    // get index/position of uploadItem within array
     const index: number = this.comments.indexOf(comment);
-    // if index returned is negative it means element not found in array
-    // else: (positive) index can be used
-    // e.g. to remove the single element at this position
     if (index !== -1) {
       this.comments.splice(index, 1);
     }

@@ -13,10 +13,9 @@
   padding-left: 40px;
 }
 p.title{
-  white-space: nowrap; /* Запрещаем перенос строк */
-  overflow: hidden; /* Обрезаем все, что не помещается в область */
-  /*padding: 5px; !* Поля вокруг текста *!*/
-  text-overflow: ellipsis; /* Добавляем многоточие */
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 .rate{
   color: white;

@@ -71,6 +71,7 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
+
   share(movie): void {
     window.alert(`The movie ${movie.name} has been shared!`);
     window.open(`https://t.me/share/url?url=http://localhost:4200/movies/${movie.id}&text=Hi! Watch this movie ${movie.name} on the Geek Street.`);

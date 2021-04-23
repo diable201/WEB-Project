@@ -49,6 +49,7 @@
             <blockquote class="blockquote mb-0">
               <p>{{comment.body}}</p>
               <footer class="blockquote-footer"> Username  {{comment.username}} </footer>
+              <button (click)="deleteComment(comment)">Remove</button>
             </blockquote>
           </div>
         </div>

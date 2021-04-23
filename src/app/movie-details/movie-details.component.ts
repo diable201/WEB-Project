@@ -15,7 +15,8 @@ export class MovieDetailsComponent implements OnInit {
   comments: Commentary[] = [];
   @Input() isLiked = false;
   review = false;
-
+  username: string;
+  body: string;
 
   constructor(
     private route: ActivatedRoute,

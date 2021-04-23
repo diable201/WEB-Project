@@ -37,14 +37,5 @@ export class GenreComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('genreId');
     this.genresService.getGenre(id).subscribe(genre => this.genre = genre);
   }
-  // onNotify(): void {
-  //   window.alert('You will be notified when the product goes on sale');
-  // }
-  //
-  // removeUpload(product): void {
-  //   const index: number = this.products.indexOf(product);
-  //   if (index !== -1) {
-  //     this.products.splice(index, 1);
-  //   }
-  // }
+ 
 }

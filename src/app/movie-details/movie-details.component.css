@@ -95,15 +95,7 @@ span{
 .desc{
   max-width: 100%;
 }
-.card{
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*border: 1px #dc4666 solid;*/
-  /*margin-top: 20px;*/
-  /*background: #212121;*/
-  /*padding: 0px 0px 0px 10px;*/
-  /*border-radius: 5px;*/
-}
+
 .review{
   width: 70%;
   border: 1px #dc4666 solid;

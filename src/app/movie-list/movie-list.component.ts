@@ -20,10 +20,6 @@ export class MovieListComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  share(movie): void {
-    window.alert(`The product ${movie.name} has been shared!`);
-    window.open(`https://t.me/share/url?url=${movie.link}&text=Hi! Look what I\'ve found on the Amazon.`
-    );
-  }
+
 }
 

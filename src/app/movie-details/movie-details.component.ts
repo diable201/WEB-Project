@@ -15,14 +15,12 @@ export class MovieDetailsComponent implements OnInit {
   comments: Commentary[] = [];
   @Input() isLiked = false;
   review = false;
-  
+
 
   constructor(
     private route: ActivatedRoute,
     private moviesService: MovieService,
-    private location: Location,
-    
-  ) {
+    private location: Location, ) {
   }
 
   ngOnInit(): void {
@@ -51,8 +49,12 @@ export class MovieDetailsComponent implements OnInit {
   addComment(username: string, body: string): void {
     username = username.trim();
     body = body.trim();
-    this.comments.push({username, body} as Commentary);
-    this.review = true;
+    if (username === '' || body === '') {
+      return;
+    } else {
+      this.comments.push({username, body} as Commentary);
+      this.review = true;
+    }
   }
 
   deleteComment(comment): void {
@@ -61,7 +63,6 @@ export class MovieDetailsComponent implements OnInit {
       this.comments.splice(index, 1);
     }
   }
-
 
   share(movie): void {
     window.alert(`The movie ${movie.name} has been shared!`);

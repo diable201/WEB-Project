@@ -15,40 +15,45 @@ img {
 .movie-cover img {
   width: 15vw;
 }
-span{
+span {
   color: white;
 }
-p{
+p {
   color: white;
 }
-h1{
+
+h1 {
   color: white;
 }
-label{
+
+label {
   color: white;
 }
-input{
+
+input {
   width: 300px;
   background: #212121;
   color: white;
   border-radius: 5px;
 }
-textarea{
+
+textarea {
   width: 500px;
   background: #212121;
   color: white;
-  padding-left: 7.5px;
+  padding-left: 8px;
   border-radius: 5px;
 }
 
-button{
+button {
   background: #dc4666;
   margin-right: 20px;
 }
-.buttons{
+.buttons {
   display: flex;
 }
-.movie-detail-container{
+
+.movie-detail-container {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -62,7 +67,7 @@ button{
   color: cornflowerblue;
 }
 
-h2{
+h2 {
   color: #dc4666;
   margin-top: 0;
 }
@@ -82,7 +87,7 @@ strong{
   color: #dc4666;
 }
 
-.desc{
+.desc {
   max-width: 70%;
   line-height: 1.8;
 }
@@ -92,11 +97,11 @@ span{
     margin-bottom: 1em;
 }
 
-.desc{
+.desc {
   max-width: 100%;
 }
 
-.review{
+.review {
   width: 70%;
   border: 1px #dc4666 solid;
   margin-top: 20px;
@@ -105,13 +110,4 @@ span{
   border-radius: 5px;
   margin-bottom: 10px;
 }
-.card-header{
-  margin-top: 10px;
-  color: white;
-}
-.blockquote-footer{
-  font-size: 10px;
-}
-/*.review{*/
-/*  margin-left: 5px;*/
-/*}*/
+

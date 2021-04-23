@@ -12,6 +12,7 @@ export class GenreComponent implements OnInit {
   movies: any;
   genre: any;
   searchText: any = '';
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class GenreComponent implements OnInit {
       this.getGenre();
     }));
   }
+
   ngOnInit(): void {
     this.getMovies();
     this.getGenre();
@@ -37,5 +39,4 @@ export class GenreComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('genreId');
     this.genresService.getGenre(id).subscribe(genre => this.genre = genre);
   }
- 
 }

@@ -38,15 +38,14 @@ import { ProfileComponent } from './profile/profile.component';
     RatingModule,
     RouterModule.forRoot([
       {path: '', component: MovieListComponent},
+      {path: 'movies', component: MovieListComponent},
       {path: 'movies/:id', component: MovieDetailsComponent},
       {path: 'genre/:genreId', component: GenreComponent},
       {path: 'login', component: LogInComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'profile', component: ProfileComponent}
-      // {path: 'shipping', component: ShippingComponent},
     ]),
     FormsModule,
-    // MoviesModule,
   ],
   providers: [
     HttpClientModule,

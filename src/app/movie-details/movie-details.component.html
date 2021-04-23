@@ -18,7 +18,7 @@
         {{movie.description}}
       </p>
       <button (click)="goBack()" class="backButton">Go Back</button>
-      <div class = "buttons">
+      <div class="buttons">
         <p *ngIf="isLiked === false">
           <button (click)="onClick()" class="likeButton">Like</button>
         </p>
@@ -49,13 +49,11 @@
             Reviews
           </div>
           <div class="card" *ngFor="let comment of comments">
-            <div class = "review">
+            <div class="review">
               <p class="blockquote-footer"> Username: {{comment.username}} </p>
               <p>{{comment.body}}</p>
-
             </div>
             <button (click)="deleteComment(comment)">Remove</button>
-
           </div>
         </div>
       </div>

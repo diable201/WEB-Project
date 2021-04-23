@@ -1,15 +1,18 @@
-h3, label{
+h3, label {
   color: white;
 }
-input{
+
+input {
   width: 300px;
   background: #212121;
   color: white;
   border-radius: 5px;
 }
-button{
+
+button {
   background: #dc4666;
 }
-a{
+
+a {
   color: #dc4666;
 }

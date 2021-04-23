@@ -18,15 +18,26 @@
         {{movie.description}}
       </p>
       <button (click)="goBack()" class="backButton">Go Back</button>
-      <p *ngIf="isLiked === false">
-        <button (click)="onClick()" class="likeButton">Like</button>
-      </p>
-      <p *ngIf="isLiked === true">
-        <button (click)="onClick()" class="likeButton">Unlike</button>
-      </p>
-      <p>
-        <button (click)="share(movie)">Share</button>
-      </p>
+      <div class = "buttons">
+        <p *ngIf="isLiked === false">
+          <button (click)="onClick()" class="likeButton">Like</button>
+        </p>
+        <p *ngIf="isLiked === true">
+          <button (click)="onClick()" class="likeButton">Unlike</button>
+        </p>
+        <p>
+          <button (click)="share(movie)">Share</button>
+        </p>
+      </div>
+<!--      <p *ngIf="isLiked === false">-->
+<!--        <button (click)="onClick()" class="likeButton">Like</button>-->
+<!--      </p>-->
+<!--      <p *ngIf="isLiked === true">-->
+<!--        <button (click)="onClick()" class="likeButton">Unlike</button>-->
+<!--      </p>-->
+<!--      <p>-->
+<!--        <button (click)="share(movie)">Share</button>-->
+<!--      </p>-->
       <body>
       <div class="main-area">
         <h1>Reviews</h1>
@@ -35,21 +46,22 @@
           <input type="username" class="form-control" placeholder="Username"
                  #commUsername>
           <label>Leave a review</label>
-          <textarea rows="5" #commBody></textarea>
+          <textarea rows="5" placeholder="Enter the comment" #commBody></textarea>
         </div>
         <button type="button" (click)="addComment(commUsername.value, commBody.value);
           commUsername.value=''; commBody.value=''">Post
         </button>
         <br>
-        <div class="card" *ngFor="let comment of comments">
-          <div class="card-header">
+        <div>
+          <div class="card-header" *ngIf="review === true">
             Reviews
           </div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
+          <div class="card" *ngFor="let comment of comments">
+            <div class = "review">
+              <p class="blockquote-footer"> Username: {{comment.username}} </p>
               <p>{{comment.body}}</p>
-              <footer class="blockquote-footer"> Username  {{comment.username}} </footer>
-            </blockquote>
+            </div>
+            <button (click)="deleteComment(comment)">Remove</button>
           </div>
         </div>
       </div>

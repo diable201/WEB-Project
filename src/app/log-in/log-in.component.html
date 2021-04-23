@@ -4,14 +4,14 @@
   <label for="username">
     Username
   </label>
-  <input id="username" type="text" [(ngModel)]="login" >
+  <input id="username" type="text" placeholder="Username" [(ngModel)]="login" >
 </div>
 
 <div>
   <label for="password">
     Password
   </label>
-  <input id="password" type="password" [(ngModel)]="password">
+  <input id="password" type="password" placeholder="Password" [(ngModel)]="password">
 </div>
 
 <button class="button" type="submit" (click)="loginFunc()">Login</button>

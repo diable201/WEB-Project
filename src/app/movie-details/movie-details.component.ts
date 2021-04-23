@@ -15,6 +15,7 @@ export class MovieDetailsComponent implements OnInit {
   movie;
   comments: Commentary[] = [];
   @Input() isLiked = false;
+  review = false;
   // addToCart(product): void {
   //   this.cartService.addToCart(product);
   //   window.alert('Your product has been added to the cart!');
@@ -56,8 +57,19 @@ export class MovieDetailsComponent implements OnInit {
     username = username.trim();
     body = body.trim();
     this.comments.push({username, body} as Commentary);
+    this.review = true;
   }
 
+  deleteComment(comment): void {
+    // get index/position of uploadItem within array
+    const index: number = this.comments.indexOf(comment);
+    // if index returned is negative it means element not found in array
+    // else: (positive) index can be used
+    // e.g. to remove the single element at this position
+    if (index !== -1) {
+      this.comments.splice(index, 1);
+    }
+  }
 
   share(movie): void {
     window.alert(`The movie ${movie.name} has been shared!`);

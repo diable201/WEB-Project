@@ -15,32 +15,39 @@ img {
 .movie-cover img {
   width: 15vw;
 }
+span{
+  color: white;
+}
+p{
+  color: white;
+}
+h1{
+  color: white;
+}
+label{
+  color: white;
+}
+input{
+  width: 300px;
+  background: #212121;
+  color: white;
+  border-radius: 5px;
+}
+textarea{
+  width: 500px;
+  background: #212121;
+  color: white;
+  padding-left: 7.5px;
+  border-radius: 5px;
+}
 
-
-/*.main-area {*/
-/*  padding-top: 64px;*/
-/*  padding-right: 40px;*/
-/*  padding-left: 40px;*/
-/*  height: auto;*/
-/*  width: auto;*/
-/*  text-align: left;*/
-/*}*/
-
-
-/*:after{*/
-/*   content: '';*/
-/*   position: absolute;*/
-/*   top:0;*/
-/*   left: 0;*/
-/*   width: 100%;*/
-/*   height: 100%;*/
-/*   !*background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(4,6,13,0) 15%, rgba(24,43,84,1) 100%); !* FF3.6-15 *!*!*/
-/*   !*background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(4,6,13,0) 15%,rgba(24,43,84,1) 100%); !* Chrome10-25,Safari5.1-6 *!*!*/
-/*   !*background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(4,6,13,0) 15%,rgba(24,43,84,1) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!*!*/
-/*   !*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#182b54',GradientType=0 ); !* IE6-9 *!*!*/
-/*}*/
-
-
+button{
+  background: #dc4666;
+  margin-right: 20px;
+}
+.buttons{
+  display: flex;
+}
 .movie-detail-container{
   position: relative;
   display: flex;
@@ -56,7 +63,7 @@ img {
 }
 
 h2{
-  color: darkcyan;
+  color: #dc4666;
   margin-top: 0;
 }
 
@@ -72,32 +79,13 @@ div {
 }
 
 strong{
-  color: darkcyan;
+  color: #dc4666;
 }
 
 .desc{
   max-width: 70%;
   line-height: 1.8;
 }
-
-
-/*@media only screen and (max-width : 48em) {*/
-/*  .movie-detail-container {*/
-/*    flex-direction: column-reverse;*/
-/*    transform: translateY(0);*/
-/*    padding: 0 0.5em;*/
-/*  }*/
-/*  .movie-cover{*/
-/*    padding: 0 1em;*/
-/*  }*/
-/*  .short-info {*/
-/*    flex-direction: column;*/
-/*  }*/
-/*  div {*/
-/*    margin-right: 0;*/
-/*    margin-bottom: 1em;*/
-/*  }*/
-/*}*/
 
 span{
     display: block;
@@ -107,4 +95,31 @@ span{
 .desc{
   max-width: 100%;
 }
-
+.card{
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*border: 1px #dc4666 solid;*/
+  /*margin-top: 20px;*/
+  /*background: #212121;*/
+  /*padding: 0px 0px 0px 10px;*/
+  /*border-radius: 5px;*/
+}
+.review{
+  width: 70%;
+  border: 1px #dc4666 solid;
+  margin-top: 20px;
+  background: #212121;
+  padding: 0px 0px 0px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.card-header{
+  margin-top: 10px;
+  color: white;
+}
+.blockquote-footer{
+  font-size: 10px;
+}
+/*.review{*/
+/*  margin-left: 5px;*/
+/*}*/

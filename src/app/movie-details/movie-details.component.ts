@@ -15,6 +15,7 @@ export class MovieDetailsComponent implements OnInit {
   movie;
   comments: Commentary[] = [];
   @Input() isLiked = false;
+  review = false;
   // addToCart(product): void {
   //   this.cartService.addToCart(product);
   //   window.alert('Your product has been added to the cart!');
@@ -56,6 +57,7 @@ export class MovieDetailsComponent implements OnInit {
     username = username.trim();
     body = body.trim();
     this.comments.push({username, body} as Commentary);
+    this.review = true;
   }
 
   deleteComment(comment): void {

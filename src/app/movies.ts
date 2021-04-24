@@ -411,5 +411,107 @@ export const movies = [
     cover: 'spectre-cover.jpg',
     like: 2364
   },
+  {
+    id: 25,
+    key: 'a-quiet-place',
+    name: 'A quiet place',
+    description: 'In a post-apocalyptic world, a family is forced to live in silence while hiding from monsters with ultra-sensitive hearing.',
+    genreId: 9,
+    genres: [
+      'action',
+      'comedy',
+      'crime'
+    ],
+    rate: '7.5',
+    length: ' 1hr 30mins',
+    img: 'A-Quiet-Place-Movie.jpg',
+    cover: 'A-Quiet-Place-banner.jpg',
+    like: 7635
+  },
+  {
+    id: 26,
+    key: 'dunkirk',
+    name: 'Dunkirk',
+    description: 'Allied soldiers from Belgium, the British Commonwealth and Empire, and France are surrounded by the German Army and evacuated during a fierce battle in World War II.',
+    genreId: 6,
+    genres: [
+      'action',
+      'comedy',
+      'crime'
+    ],
+    rate: '7.8',
+    length: ' 1hr 46mins',
+    img: 'Dunkirk.jpg',
+    cover: 'Dunkirk-banner.jpg',
+    like: 6794
+  },
+  {
+    id: 27,
+    key: 'the-last-thing-he-wanted',
+    name: 'The last thing he wanted',
+    description: 'A veteran D.C. journalist loses the thread of her own narrative when a guilt-propelled errand for her father thrusts her from byline to unwitting subject in the very story she\'s trying to break. Adapted from Joan Didion\'s namesake novel.',
+    genreId: 7,
+    genres: [
+      'action',
+      'comedy',
+      'crime'
+    ],
+    rate: '4.3',
+    length: '1hr 55mins',
+    img: 'The-Last-Thing-He-Wanted.jpg',
+    cover: 'The-Last-Thing-He-Wanted-Banner.jpg',
+    like: 845
+  },
+  {
+    id: 28,
+    key: 'motherless-brooklyn',
+    name: 'Motherless Brooklyn',
+    description: 'In 1950s New York, a lonely private detective afflicted with Tourette\'s Syndrome ventures to solve the murder of his mentor and only friend.',
+    genreId: 7,
+    genres: [
+      'action',
+      'comedy',
+      'crime'
+    ],
+    rate: '6.8',
+    length: '2hr 24mins',
+    img: 'Motherless-Brooklyn.jpg',
+    cover: 'Motherless-Brooklyn-Banner.jpg',
+    like: 4654
+  },
+  {
+    id: 29,
+    key: 'the-curse-of-la-llorona',
+    name: 'The Curse of la Llorona',
+    description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
+    genreId: 9,
+    genres: [
+      'action',
+      'comedy',
+      'crime'
+    ],
+    rate: '5.3',
+    length: '1hr 33mins',
+    img: 'The-Curse-of-la-Llorona.jpg',
+    cover: 'The-Curse-of-la-Llorona-Banner.jpg',
+    like: 7843
+  },
+  {
+    id: 30,
+    key: 'hacksaw-ridge',
+    name: 'Hacksaw ridge',
+    description: 'World War II American Army Medic Desmond T. Doss, who served during the Battle of Okinawa, refuses to kill people, and becomes the first man in American history to receive the Medal of Honor without firing a shot.',
+    genreId: 6,
+    genres: [
+      'action',
+      'comedy',
+      'crime'
+    ],
+    rate: '8.1',
+    length: '2hr 19mins',
+    img: 'hacksaw-ridge.jpg',
+    cover: 'hacksaw-ridge-banner.png',
+    like: 10315
+  },
 ];
 

@@ -1,10 +1,13 @@
-# Web Project
+# Web Project - Movie Reviews
 Team project for Web Development subject at KBTU (spring 2020).
-###Frontend: 
+
+### Frontend:
+
 Angular, TypeScript, HTML, CSS  
-###Backend: 
+
+### Backend: 
 Python, Framework Django 2
-###Team members
+### Team members
 | Surname        | Name           | Github  |
 | ------------- |:-------------:| -----:|
 | Seitbekov     | Sanzhar | [Click Here](https://github.com/diable201) |

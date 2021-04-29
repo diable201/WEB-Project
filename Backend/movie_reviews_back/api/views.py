@@ -1,6 +1,7 @@
 from django.http.response import JsonResponse
-from .models import *
-from .serializers import *
+
+from api.models import *
+from api.serializers import *
 from rest_framework.decorators import api_view
 from django.http.response import JsonResponse
 
@@ -102,3 +103,4 @@ class CommentDetailAPIView(APIView):
     comment = self.get_object(pk)
     comment.delete()
     return Response({'message': 'deleted'}, status=204)
+

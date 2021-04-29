@@ -67,6 +67,7 @@ class User(models.Model):
     img = models.CharField(max_length=300)
     status = models.BooleanField(default=False)
 
+
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'

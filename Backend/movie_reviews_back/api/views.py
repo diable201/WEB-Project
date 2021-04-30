@@ -3,12 +3,8 @@ from api.models import *
 from api.serializers import *
 from rest_framework.decorators import api_view
 from django.http.response import JsonResponse
-
-from django.views.decorators.csrf import csrf_exempt
-
-from rest_framework.request import Request
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-import json
 from django.shortcuts import Http404
 from rest_framework.views import APIView
 from rest_framework import status
@@ -84,6 +80,8 @@ class CommentsListAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    permission_classes = IsAuthenticated
 
 
 class CommentDetailAPIView(APIView):

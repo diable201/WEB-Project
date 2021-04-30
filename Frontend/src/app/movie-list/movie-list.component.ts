@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {movies} from '../movies';
+import {Movie, movies} from '../movies';
 import { Location } from '@angular/common';
-import {NavigationEnd, Router} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';
+import {MovieService} from '../movie.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,15 +11,25 @@ import {filter} from 'rxjs/operators';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-
-  movies = movies;
+  movies: Movie[] = [];
+  // movies = movies;
 
   searchText: any = '';
 
-  constructor() {}
+  constructor(private movieService: MovieService,
+              private route: ActivatedRoute) {
+
+  }
 
   ngOnInit(): void {
+    this.getMovies();
+  }
 
+  getMovies(): void {
+    this.movieService.getMovies().subscribe((data) => {
+      console.log(data);
+      this.movies = data;
+    });
   }
 
 }

@@ -10,10 +10,10 @@ import {movies} from './movies';
 export class MovieService {
   constructor(private client: HttpClient) {
   }
-  BASE_URL = 'http://localhost:4200';
+  BASE_URL = 'http://127.0.0.1:8000';
   getMovies(): Observable<Movie[]> {
     // return of(movies);
-    return this.client.get<Movie[]>(`${this.BASE_URL}/movies`);
+    return this.client.get<Movie[]>(`${this.BASE_URL}/api/movies/`);
   }
 
   getMoviesByGenreId(id: number): Observable<Movie[]> {

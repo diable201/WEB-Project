@@ -1,6 +1,5 @@
 export interface Movie {
   id: number;
-  key: string;
   name: string;
   description: string;
   genreId: number;

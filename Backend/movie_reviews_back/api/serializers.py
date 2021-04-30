@@ -23,6 +23,11 @@ class UserSerializer(serializers.Serializer):
     img = serializers.CharField(read_only=True)
     status = serializers.BooleanField()
 
+    def update(self, instance, validated_data):
+        instance.status = validated_data['status']
+        instance.save()
+        return instance
+
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Genre(models.Model):
@@ -65,7 +66,6 @@ class User(models.Model):
     email = models.CharField(max_length=300)
     password = models.CharField(max_length=300)
     img = models.CharField(max_length=300)
-    status = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'User'
@@ -83,14 +83,13 @@ class User(models.Model):
             'email': self.email,
             'password': self.password,
             'img': self.img,
-            'status': self.status
         }
 
 
 class Comment(models.Model):
     # username = models.CharField(max_length=300)
     description = models.TextField(default='')
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
     class Meta:
@@ -98,7 +97,7 @@ class Comment(models.Model):
         verbose_name_plural = 'Comments'
 
     def __str__(self):
-        return f'{self.id}, {self.username.name}'
+        return f'{self.id}, {self.user.name}'
 
     def to_json(self):
         return {
@@ -106,8 +105,8 @@ class Comment(models.Model):
             # 'username': self.username,
             'description': self.description,
             'username': {
-                'id': self.username.id,
-                'name': self.username.name
+                'id': self.user.id,
+                'name': self.user.name
             },
             'movie': {
                 'id': self.movie.id,

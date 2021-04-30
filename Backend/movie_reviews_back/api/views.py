@@ -1,5 +1,4 @@
 from django.http.response import JsonResponse
-
 from api.models import *
 from api.serializers import *
 from rest_framework.decorators import api_view
@@ -13,94 +12,101 @@ import json
 from django.shortcuts import Http404
 from rest_framework.views import APIView
 from rest_framework import status
-#-------------------------------------FBV--------------------------------------
+
+
+# -------------------------------------FBV--------------------------------------
 
 @api_view(['GET'])
 def genres_list(request):
-  genres = Genre.objects.all()
-  serializer = GenreSerializer(genres, many=True)
-  return Response(serializer.data)
+    genres = Genre.objects.all()
+    serializer = GenreSerializer(genres, many=True)
+    return Response(serializer.data)
+
 
 @api_view(['GET'])
 def genres_movies(request, genre_id):
-  try:
-    movies = Movie.objects.filter(genre=genre_id)
-  except Movie.DoesNotExist as e:
-    return JsonResponse({'message': str(e)}, status=400)
-  serializer = MovieSerializer(movies, many=True)
-  return Response(serializer.data)
+    try:
+        movies = Movie.objects.filter(genre=genre_id)
+    except Movie.DoesNotExist as e:
+        return JsonResponse({'message': str(e)}, status=400)
+    serializer = MovieSerializer(movies, many=True)
+    return Response(serializer.data)
 
 
 @api_view(['GET'])
 def movies_list(request):
-  movies = Movie.objects.all()
-  serializers = MovieSerializer(movies, many=True)
-  return Response(serializers.data)
+    movies = Movie.objects.all()
+    serializers = MovieSerializer(movies, many=True)
+    return Response(serializers.data)
+
 
 @api_view(['GET'])
 def movies_detail(request, movie_id):
-  try:
-    movie = Movie.objects.get(id = movie_id)
-  except Movie.DoesNotExist as e:
-    return JsonResponse({'message': str(e)}, status=400)
-  serializer = MovieSerializer(movie)
-  return Response(serializer.data)
+    try:
+        movie = Movie.objects.get(id=movie_id)
+    except Movie.DoesNotExist as e:
+        return JsonResponse({'message': str(e)}, status=400)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
 
 
-#----------------------------------------CBV--------------------------------
+# ----------------------------------------CBV--------------------------------
 
 class UsersListAPIView(APIView):
-  def get(self, request):
-    users = User.objects.all()
-    serializer = UserSerializer(users, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    def get(self, request):
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 class UserDetailAPIView(APIView):
-  def get_object(self, pk):
-    try:
-      return User.objects.get(id=pk)
-    except User.DoesNotExist as e:
-      raise Http404
-  def get(self, request, pk=None):
-    user = self.get_object(pk)
-    serializer = UserSerializer(user)
-    return Response(serializer.data)
+    def get_object(self, pk):
+        try:
+            return User.objects.get(id=pk)
+        except User.DoesNotExist as e:
+            raise Http404
+
+    def get(self, request, pk=None):
+        user = self.get_object(pk)
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
+
 
 class CommentsListAPIView(APIView):
-  def get(self, request):
-    comments = Comment.objects.all()
-    serializer = CommentSerializer(comments, many=True)
-    return Response(serializer.data, status= status.HTTP_200_OK)
+    def get(self, request):
+        comments = Comment.objects.all()
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
-  def post(self, request):
-    serializer = CommentSerializer(data=request.data)
-    if serializer.is_valid():
-      serializer.save()
-      return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request):
+        serializer = CommentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class CommentDetailAPIView(APIView):
-  def get_object(self, pk):
-    try:
-      return User.objects.get(id=pk)
-    except User.DoesNotExist as e:
-      raise Http404
+    def get_object(self, pk):
+        try:
+            return Comment.objects.get(id=pk)
+        except Comment.DoesNotExist as e:
+            raise Http404
 
-  def get(self, request, pk=None):
-    comment = self.get_object(pk)
-    serializer = CommentSerializer(comment)
-    return Response(serializer.data)
+    def get(self, request, pk=None):
+        comment = self.get_object(pk)
+        serializer = CommentSerializer(comment)
+        return Response(serializer.data)
 
-  def put(self, request, pk=None):
-    comment = self.get_object(pk)
-    serializer = CommentSerializer(instance=comment, data=request.data)
-    if serializer.is_valid():
-      serializer.save()
-      return Response(serializer.data)
-    return Response(serializer.errors)
+    def put(self, request, pk=None):
+        comment = self.get_object(pk)
+        serializer = CommentSerializer(instance=comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
 
-  def delete(self, request, pk=None):
-    comment = self.get_object(pk)
-    comment.delete()
-    return Response({'message': 'deleted'}, status=204)
-
+    def delete(self, request, pk=None):
+        comment = self.get_object(pk)
+        comment.delete()
+        return Response({'message': 'deleted'}, status=204)

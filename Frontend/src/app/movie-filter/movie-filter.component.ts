@@ -1,12 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {GenreService} from '../genre.service';
+import {Genre} from '../genres';
+import {Movie} from '../movies';
+
 @Component({
   selector: 'app-movie-filter',
   templateUrl: './movie-filter.component.html',
   styleUrls: ['./movie-filter.component.css']
 })
 export class MovieFilterComponent implements OnInit {
-  genres: any;
+  genres: Genre[] = [];
 
   constructor(private genreService: GenreService) {
   }
@@ -16,6 +19,9 @@ export class MovieFilterComponent implements OnInit {
   }
 
   getGenres(): void {
-    this.genreService.getGenres().subscribe(genres => this.genres = genres);
+    this.genreService.getGenres().subscribe((data) => {
+      console.log(data);
+      this.genres = data;
+    });
   }
 }

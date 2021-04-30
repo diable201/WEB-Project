@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MovieService} from '../movie.service';
-import {movies} from '../movies';
+// import {movies} from '../movies';
 import {Location} from '@angular/common';
 import {Commentary} from '../commentary';
 
@@ -29,10 +29,19 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   getMovie(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const movieIdFromRoute = Number(routeParams.get('id'));
-    this.movie = movies.find(movie => movie.id === movieIdFromRoute);
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id !== null) {
+        this.moviesService.getMovieDetail(id).subscribe((data) => {
+          this.movie = data;
+        });
+    //     const routeParams = this.route.snapshot.paramMap;
+    //     const movieIdFromRoute = Number(routeParams.get('id'));
+    //     this.movie = movies.find(movie => movie.id === movieIdFromRoute);
+      }
+    });
   }
+
   goBack(): void {
     this.location.back();
   }

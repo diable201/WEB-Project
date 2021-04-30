@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Movie, movies} from '../movies';
+import {Movie} from '../movies';
 import { Location } from '@angular/common';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';

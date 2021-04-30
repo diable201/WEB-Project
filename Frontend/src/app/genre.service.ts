@@ -12,14 +12,13 @@ export class GenreService {
 
   constructor(private client: HttpClient) {
   }
-  BASE_URL = 'http://localhost:4200';
+  BASE_URL = 'http://localhost:8000';
   getGenre(id: any): Observable<Genre> {
-    // return this.client.get<Genre>(`${this.BASE_URL}/genre/genreId`);
-    return of(genres.find(genre => genre.id === id));
+    return this.client.get<Genre>(`${this.BASE_URL}/api/genres/${id}/`);
+    // return of(genres.find(genre => genre.id === id));
   }
 
   getGenres(): Observable<Genre[]> {
-    // return this.client.get<Genre[]>(`${this.BASE_URL}/genre`);
-    return of(genres);
+    return this.client.get<Genre[]>(`${this.BASE_URL}/api/genres/`);
   }
 }

@@ -34,27 +34,30 @@
       <div class="main-area">
         <h1>Reviews</h1>
         <div>
-          <label>Username</label>
-          <input type="username" class="form-control" placeholder="Username"
-                 [(ngModel)]="username">
+<!--          <label>Username</label>-->
+<!--          <input type="username" class="form-control" placeholder="Username"-->
+<!--                 [(ngModel)]="username">-->
           <label>Leave a review</label>
-          <textarea rows="5" placeholder="Enter the comment" [(ngModel)]="body"></textarea>
+          <textarea rows="5" placeholder="Enter the comment" [(ngModel)]="descriptionText"></textarea>
         </div>
-        <button type="button" (click)="addComment(username, body);
-          username=''; body=''">Post
-        </button>
+        <button type="button" (click)=newComment()>Post</button>
         <br>
         <div>
-          <div class="card-header" *ngIf="review === true">
-            <br>
-            Reviews
-          </div>
           <div class="card" *ngFor="let comment of comments">
-            <div class="review">
-              <p class="blockquote-footer"> Username: {{comment.username}} </p>
-              <p>{{comment.body}}</p>
+            <div >
+              <div class="review">
+                <span >{{comment.username}}</span><br>
+                <span><span class="lol">Comment:</span>  <p>{{comment.description}}</p></span>
+              </div>
+              <div >
+                <button *ngIf="comment.username === currentUserName && !updateClick" class="dlt" (click)="editButton(comment.id)">Edit</button>
+                <div *ngIf="updateClick && comment.id === id">
+                  <textarea [(ngModel)]="updatedDescription" placeholder="Edit your comment" ></textarea>
+                  <button *ngIf="comment.username === currentUserName && updateClick" (click)="updateButton(comment)">Change</button>
+                </div>
+                <button *ngIf="comment.username === currentUserName"  (click)="deleteButton(comment)">Delete</button><br>
+              </div>
             </div>
-            <button (click)="deleteComment(comment)">Remove</button>
           </div>
         </div>
       </div>
@@ -62,3 +65,4 @@
     </div>
   </div>
 </div>
+

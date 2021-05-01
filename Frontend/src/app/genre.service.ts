@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {genres} from './genres';
+// import {genres} from './genres';
 import {Observable, of} from 'rxjs';
 import {Genre} from './genres';
 import {HttpClient} from '@angular/common/http';

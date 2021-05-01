@@ -4,7 +4,6 @@ export interface User {
   password: string;
   status: boolean;
 }
-
 export interface AuthToken{
   token: string;
 }

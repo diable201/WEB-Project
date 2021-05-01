@@ -69,19 +69,25 @@ class UserDetailAPIView(APIView):
 
 
 class CommentsListAPIView(APIView):
-    def get(self, request):
-        comments = Comment.objects.all()
-        serializer = CommentSerializer(comments, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get_objects(self, movie_id):
+        try:
+            return Comment.objects.filter(movie=movie_id)
+        except Comment.DoesNotExist as e:
+            raise Http404
 
-    def post(self, request):
+    def get(self, request, movie_id=None):
+        comments = self.get_objects(movie_id)
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, movie_id):
         serializer = CommentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    permission_classes = IsAuthenticated
+    # permission_classes = (IsAuthenticated)
 
 
 class CommentDetailAPIView(APIView):
@@ -91,12 +97,12 @@ class CommentDetailAPIView(APIView):
         except Comment.DoesNotExist as e:
             raise Http404
 
-    def get(self, request, pk=None):
+    def get(self, request, movie_id=None, pk=None):
         comment = self.get_object(pk)
         serializer = CommentSerializer(comment)
         return Response(serializer.data)
 
-    def put(self, request, pk=None):
+    def put(self, request, movie_id=None, pk=None):
         comment = self.get_object(pk)
         serializer = CommentSerializer(instance=comment, data=request.data)
         if serializer.is_valid():
@@ -104,7 +110,7 @@ class CommentDetailAPIView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors)
 
-    def delete(self, request, pk=None):
+    def delete(self, request, movie_id=None, pk=None):
         comment = self.get_object(pk)
         comment.delete()
         return Response({'message': 'deleted'}, status=204)

@@ -21,10 +21,10 @@ class UserSerializer(serializers.Serializer):
     email = serializers.CharField(read_only=True)
     password = serializers.CharField(read_only=True)
     img = serializers.CharField(read_only=True)
-    status = serializers.BooleanField()
+    
 
     def update(self, instance, validated_data):
-        instance.status = validated_data['status']
+        instance.status = validated_data['name']
         instance.save()
         return instance
 

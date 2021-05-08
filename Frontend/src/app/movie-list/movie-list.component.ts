@@ -12,7 +12,6 @@ import {MovieService} from '../movie.service';
 })
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
-  // movies = movies;
 
   searchText: any = '';
 
@@ -31,6 +30,5 @@ export class MovieListComponent implements OnInit {
       this.movies = data;
     });
   }
-
 }
 

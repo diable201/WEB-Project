@@ -1,7 +1,7 @@
 from django.http.response import JsonResponse
 from api.models import *
 from api.serializers import *
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.http.response import JsonResponse
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -87,7 +87,7 @@ class CommentsListAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # permission_classes = (IsAuthenticated)
+    permission_classes = [IsAuthenticated]
 
 
 class CommentDetailAPIView(APIView):
@@ -113,4 +113,4 @@ class CommentDetailAPIView(APIView):
     def delete(self, request, movie_id=None, pk=None):
         comment = self.get_object(pk)
         comment.delete()
-        return Response({'message': 'deleted'}, status=204)
+        return Response({'message': 'deleted'}, status=status.HTTP_204_NO_CONTENT)

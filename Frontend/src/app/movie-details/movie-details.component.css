@@ -1,4 +1,4 @@
-.movie-info-container{
+.movie-info-container {
   width: 100%;
 }
 
@@ -15,9 +15,11 @@ img {
 .movie-cover img {
   width: 15vw;
 }
+
 span {
   color: white;
 }
+
 p {
   color: white;
 }
@@ -49,6 +51,7 @@ button {
   background: #dc4666;
   margin-right: 20px;
 }
+
 .buttons {
   display: flex;
 }
@@ -83,7 +86,7 @@ div {
   margin-right: 1em;
 }
 
-strong{
+strong {
   color: #dc4666;
 }
 
@@ -92,9 +95,9 @@ strong{
   line-height: 1.8;
 }
 
-span{
-    display: block;
-    margin-bottom: 1em;
+span {
+  display: block;
+  margin-bottom: 1em;
 }
 
 .desc {
@@ -110,4 +113,3 @@ span{
   border-radius: 5px;
   margin-bottom: 10px;
 }
-

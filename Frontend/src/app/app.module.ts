@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RatingModule} from 'ng-starrating';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
@@ -12,7 +12,7 @@ import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { GenreComponent } from './genre/genre.component';
 import { LogInComponent } from './log-in/log-in.component';
-
+import {AuthInterceptor} from './AuthInterceptor';
 import {FilterPipe} from './movie-list/pipes';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -40,14 +40,19 @@ import { ProfileComponent } from './profile/profile.component';
       {path: '', component: MovieListComponent},
       {path: 'movies', component: MovieListComponent},
       {path: 'movies/:id', component: MovieDetailsComponent},
-      {path: 'genre/:genreId', component: GenreComponent},
+      {path: 'genres/:id', component: GenreComponent},
       {path: 'login', component: LogInComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'profile', component: ProfileComponent}
     ]),
     FormsModule,
   ],
-  providers: [
+  providers: [ 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
     HttpClientModule,
   ],
   exports: [

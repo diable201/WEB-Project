@@ -27,7 +27,7 @@ export class TopBarComponent implements OnInit{
     }
   }
 
-  get isLogged(): boolean{
+  get isLogged(): boolean {
     return AppComponent.isLogged;
   }
 

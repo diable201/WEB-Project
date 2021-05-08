@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MovieService} from '../movie.service';
-// import {movies} from '../movies';
 import {Location} from '@angular/common';
 import {Movie} from "../movies";
 import {Commentary} from '../commentary';
@@ -13,6 +12,8 @@ import {User} from "../models";
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
+
+
 export class MovieDetailsComponent implements OnInit {
   movie;
   comments: Commentary[] = [];
@@ -23,6 +24,7 @@ export class MovieDetailsComponent implements OnInit {
   updatedDescription = '';
   id = 0;
   currentUserName = localStorage.getItem('username');
+
   constructor(
     private route: ActivatedRoute,
     private moviesService: MovieService,
@@ -67,12 +69,14 @@ export class MovieDetailsComponent implements OnInit {
     this.id = id;
     this.updateClick = true;
   }
-  newComment(): void{
-    if (this.descriptionText !== ''){
+  
+  newComment(): void {
+    if (this.descriptionText !== '') {
       this.route.paramMap.subscribe((params) => {
         const id = params.get('id');
-        if (id != null){
-          const comment = new Commentary(this.currentUserName as string, id, this.descriptionText);
+        if (id !== null) {
+          const comment = new Commentary(this.currentUserName as string, id, 
+            this.descriptionText);
           this.moviesService.createComment(id, comment).subscribe((comment) => {
             this.getMovie();
             this.addClick = false;
@@ -81,16 +85,15 @@ export class MovieDetailsComponent implements OnInit {
         }
       });
     }
-    else{
+    else {
       this.addClick = false;
     }
   }
-  deleteButton(comment: Commentary): void{
-    // const ind = Comments.indexOf(id);
-    // Comments.splice(ind, 1);
+
+  deleteButton(comment: Commentary): void {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
-      if (id != null){
+      if (id !== null) {
         this.moviesService.deleteComment(id, comment.id).subscribe((comment) => {
           this.getMovie();
         });
@@ -98,12 +101,13 @@ export class MovieDetailsComponent implements OnInit {
     });
     this.getMovie();
   }
-  updateButton(comment: Commentary): void{
-    if (this.updatedDescription !== ''){
+
+  updateButton(comment: Commentary): void {
+    if (this.updatedDescription !== '') {
       comment.description = this.updatedDescription;
       this.route.paramMap.subscribe((params) => {
         const id = params.get('id');
-        if (id != null){
+        if (id !== null) {
           this.moviesService.updateComment(id, comment).subscribe((comment) => {
             this.updateClick = false;
             this.updatedDescription = '';
@@ -112,14 +116,14 @@ export class MovieDetailsComponent implements OnInit {
         }
       });
     }
-    else{
+    else {
       this.updateClick = false;
     }
   }
 
   share(movie): void {
-    window.alert(`The movie ${movie.name} has been shared!`);
-    window.open(`https://t.me/share/url?url=http://localhost:4200/movies/${movie.id}&text=Hi! Watch this movie ${movie.name} on the Geek Street.`);
+    window.alert(`The movie ${this.movie.name} has been shared!`);
+    window.open(`https://t.me/share/url?url=http://localhost:4200/movies/${this.movie.id}&text=Hi! Watch this movie ${movie.name} on the Geek Street.`);
   }
 }
 

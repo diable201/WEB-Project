@@ -4,7 +4,7 @@
   <label for="username">
     Username
   </label>
-  <input id="username" type="text" placeholder="Username" [(ngModel)]="username" >
+  <input id="username" type="text" placeholder="Username" [(ngModel)]="username">
 </div>
 
 <div>
@@ -15,4 +15,3 @@
 </div>
 <button class="button" type="submit" (click)="loginFunc()">Login</button>
 <p>Don't have any account? <a [routerLink]="['/register']">Click here</a></p>
-

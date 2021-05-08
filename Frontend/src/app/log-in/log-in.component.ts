@@ -14,13 +14,10 @@ export class LogInComponent implements OnInit {
   constructor(private router: Router,
               private loginService: LoginService,
               private location: Location
-  ) {
-  }
+              ) {}
 
   username = '';
   password = '';
-  isTaken = false;
-
 
   ngOnInit(): void {
   }
@@ -37,17 +34,6 @@ export class LogInComponent implements OnInit {
       localStorage.setItem('username', this.username);
       this.username = '';
       this.password = '';
-      // const login = document.getElementById('username');
-      // const password = document.getElementById('password');
-      // // console.log(username);
-      // // console.log(password);
-      // if (this.login === 'admin' && this.password === '123456'){
-      //   this.router.navigateByUrl('/profile');
-      // }else{
-      //   window.alert(`Login or password is incorrect. Please try again`);
-      //   this.login = '';
-      //   this.password = '';
-      // }
     });
   }
 }

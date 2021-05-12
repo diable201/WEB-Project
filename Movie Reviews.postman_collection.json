@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "001621c6-97a8-4cfb-8681-abf57a12be10",
+		"name": "Movie Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Getters",
+			"item": [
+				{
+					"name": "Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Genres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/genres/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Movie Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Movies By Genre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/genres/2/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/comments/32",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comments",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comments By Movie and ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/1/comments/32",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"1",
+								"comments",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comments By Movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/1/comments/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"1",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "READ COMMENT",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/1/comments/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"1",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE COMMENT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"description\": \"test\",\n    \"movie\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/movies/1/comments/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"1",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMMENT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 32,\n    \"username\": \"admin\",\n    \"description\": \"hello world\",\n    \"movie\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/movies/1/comments/32/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"1",
+								"comments",
+								"32",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMMENT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjIwNjc2NDU0LCJlbWFpbCI6IiJ9.wgSyo47yJpJxQdeYI2cgiYzob0HQ1jRbvOCNnojcU6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/1/comments/31/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"1",
+								"comments",
+								"31",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable('token', response.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/login/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

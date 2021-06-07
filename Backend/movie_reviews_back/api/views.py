@@ -1,4 +1,3 @@
-from django.http.response import JsonResponse
 from api.models import *
 from api.serializers import *
 from rest_framework.decorators import api_view, permission_classes

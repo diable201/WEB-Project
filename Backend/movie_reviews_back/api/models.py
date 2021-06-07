@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class Genre(models.Model):
@@ -28,7 +27,6 @@ class Movie(models.Model):
     cover = models.CharField(max_length=300)
     like = models.IntegerField(default=0)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
-    # comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Movie'
@@ -51,11 +49,6 @@ class Movie(models.Model):
                 'id': self.genre.id,
                 'name': self.genre.name
             },
-            # 'comment': {
-            #     'id': self.comment.id,
-            #     'name': self.comment.user.username,
-            #     'description': self.comment.description
-            # }
         }
 
 
@@ -89,7 +82,6 @@ class User(models.Model):
 class Comment(models.Model):
     username = models.CharField(max_length=300)
     description = models.TextField(default='')
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
     class Meta:
@@ -102,7 +94,6 @@ class Comment(models.Model):
     def to_json(self):
         return {
             'id': self.id,
-            # 'username': self.username,
             'description': self.description,
             'username': {
                 'id': self.user.id,

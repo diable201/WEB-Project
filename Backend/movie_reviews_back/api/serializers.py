@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
 from api.models import *
 
 
@@ -21,7 +20,6 @@ class UserSerializer(serializers.Serializer):
     email = serializers.CharField(read_only=True)
     password = serializers.CharField(read_only=True)
     img = serializers.CharField(read_only=True)
-    
 
     def update(self, instance, validated_data):
         instance.status = validated_data['name']

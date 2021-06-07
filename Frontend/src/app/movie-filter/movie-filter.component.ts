@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GenreService} from '../genre.service';
 import {Genre} from '../genres';
-import {Movie} from '../movies';
 
 @Component({
   selector: 'app-movie-filter',

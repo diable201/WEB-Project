@@ -7,12 +7,12 @@ import {AppComponent} from '../app.component';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
-export class TopBarComponent implements OnInit{
-  loginButton(): void{
+export class TopBarComponent implements OnInit {
+  loginButton(): void {
     this.router.navigateByUrl('/login');
   }
 
-  registerButton(): void{
+  registerButton(): void {
     this.router.navigateByUrl('/register');
   }
 
@@ -31,7 +31,7 @@ export class TopBarComponent implements OnInit{
     return AppComponent.isLogged;
   }
 
-  logout(): void{
+  logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     AppComponent.isLogged = false;

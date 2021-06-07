@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Movie} from '../movies';
-import { Location } from '@angular/common';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {filter} from 'rxjs/operators';
 import {MovieService} from '../movie.service';
 
 @Component({
@@ -12,11 +9,9 @@ import {MovieService} from '../movie.service';
 })
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
-
   searchText: any = '';
 
-  constructor(private movieService: MovieService,
-              private route: ActivatedRoute) {
+  constructor(private movieService: MovieService) {
 
   }
 

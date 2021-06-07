@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MovieService} from '../movie.service';
 import {GenreService} from '../genre.service';
 import {Movie} from '../movies';
 import {Genre} from '../genres';
+
 @Component({
   selector: 'app-genre',
   templateUrl: './genre.component.html',

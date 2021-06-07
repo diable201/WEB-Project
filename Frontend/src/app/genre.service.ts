@@ -11,7 +11,7 @@ export class GenreService {
 
   constructor(private client: HttpClient) {
   }
-  
+
   BASE_URL = 'http://localhost:8000';
 
   getGenre(id: any): Observable<Genre> {

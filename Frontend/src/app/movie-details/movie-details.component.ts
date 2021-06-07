@@ -2,9 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MovieService} from '../movie.service';
 import {Location} from '@angular/common';
-import {Movie} from "../movies";
 import {Commentary} from '../commentary';
-import {User} from "../models";
 
 
 @Component({
@@ -69,14 +67,15 @@ export class MovieDetailsComponent implements OnInit {
     this.id = id;
     this.updateClick = true;
   }
-  
+
   newComment(): void {
     if (this.descriptionText !== '') {
       this.route.paramMap.subscribe((params) => {
         const id = params.get('id');
         if (id !== null) {
-          const comment = new Commentary(this.currentUserName as string, id, 
+          const comment = new Commentary(this.currentUserName as string, id,
             this.descriptionText);
+          // tslint:disable-next-line:no-shadowed-variable
           this.moviesService.createComment(id, comment).subscribe((comment) => {
             this.getMovie();
             this.addClick = false;
@@ -94,6 +93,7 @@ export class MovieDetailsComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       if (id !== null) {
+        // tslint:disable-next-line:no-shadowed-variable
         this.moviesService.deleteComment(id, comment.id).subscribe((comment) => {
           this.getMovie();
         });
@@ -108,6 +108,7 @@ export class MovieDetailsComponent implements OnInit {
       this.route.paramMap.subscribe((params) => {
         const id = params.get('id');
         if (id !== null) {
+          // tslint:disable-next-line:no-shadowed-variable
           this.moviesService.updateComment(id, comment).subscribe((comment) => {
             this.updateClick = false;
             this.updatedDescription = '';

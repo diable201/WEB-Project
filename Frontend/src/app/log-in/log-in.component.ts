@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { LoginService } from '../login.service';
+import {Component, OnInit} from '@angular/core';
+import {LoginService} from '../login.service';
 import {Router} from '@angular/router';
 import {AppComponent} from '../app.component';
 import {Location} from '@angular/common';
@@ -14,7 +13,8 @@ export class LogInComponent implements OnInit {
   constructor(private router: Router,
               private loginService: LoginService,
               private location: Location
-              ) {}
+  ) {
+  }
 
   username = '';
   password = '';

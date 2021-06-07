@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +12,13 @@ export class RegisterComponent implements OnInit {
   name: string;
   surname: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  registerFunc(): void{
+  registerFunc(): void {
     window.alert(`Registration is not available now. Please try again later`);
   }
 }

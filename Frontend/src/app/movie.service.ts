@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {Movie} from './movies';
-import {Commentary} from "./commentary";
+import {Commentary} from './commentary';
 import {HttpClient} from '@angular/common/http';
 
 
@@ -12,7 +12,7 @@ import {HttpClient} from '@angular/common/http';
 export class MovieService {
   constructor(private client: HttpClient) {
   }
-  
+
   BASE_URL = 'http://127.0.0.1:8000';
 
   getMovies(): Observable<Movie[]> {
@@ -28,7 +28,7 @@ export class MovieService {
   }
 
   getComments(id: string): Observable<Commentary[]>{
-    return this.client.get<Commentary[]>(`${this.BASE_URL}/api/movies/${id}/comments/`)
+    return this.client.get<Commentary[]>(`${this.BASE_URL}/api/movies/${id}/comments/`);
   }
 
   createComment(id: string, comment: Commentary): Observable<any>{
@@ -39,8 +39,8 @@ export class MovieService {
     return this.client.put(`${this.BASE_URL}/api/movies/${id}/comments/${comment.id}/`, comment);
   }
 
-  deleteComment(id: string, comment_id: number): Observable<any>{
-    return this.client.delete(`${this.BASE_URL}/api/movies/${id}/comments/${comment_id}/`);
+  deleteComment(id: string, commentId: number): Observable<any>{
+    return this.client.delete(`${this.BASE_URL}/api/movies/${id}/comments/${commentId}/`);
   }
 
 }

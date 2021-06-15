@@ -26,7 +26,7 @@ Python, Framework Django 2
 ``` Shell
 $ git clone https://github.com/diable201/WEB-Project.git
 ```
-2. Inside `Frontend` folder run the command for installing dependecies
+2. Inside `Frontend` folder run the command for installing dependencies 
 ``` Shell
 $ nmp install
 ```

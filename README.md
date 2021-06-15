@@ -67,4 +67,4 @@ From the `Frontend` folder. Client will be running on `http://localhost:4200/`
 | Sagynbayev    | Almaz         |   [Click Here](https://github.com/sagynbayev) |
 | Sarsengaliyev | Zhaisan       |    [Click Here](https://github.com/Zhaisan)   |
 ## License
-This repository is released under the [MIT license](LICENSE.md). In short, this means you are free to use this software in any personal, open-source or commercial projects. Attribution is optional but appreciated.
+This repository is released under the [MIT license](LICENSE). In short, this means you are free to use this software in any personal, open-source or commercial projects. Attribution is optional but appreciated.

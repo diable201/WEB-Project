@@ -3,7 +3,7 @@ export class Commentary {
   id: number;
   username: string;
   movie: string;
-  public description: string;
+  description: string;
   constructor(username: string, movie: string, description: string) {
     this.id = Commentary.cnt++;
     this.username = username;

@@ -28,7 +28,7 @@ $ git clone https://github.com/diable201/WEB-Project.git
 ```
 2. Inside `Frontend` folder run the command for installing dependencies 
 ``` Shell
-$ nmp install
+$ npm install
 ```
 ### Django Side
 3. Install `virtualvenv` if you don't have it
